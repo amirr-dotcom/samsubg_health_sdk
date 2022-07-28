@@ -1,0 +1,45 @@
+group 'com.devnation.samsung_health_sdk'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+}
+
+
+dependencies {
+    // implementation files('C:\\flutter\\bin\\cache\\artifacts\\engine\\android-x64\\flutter.jar')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation files('libs/samsung-health-data-1.5.0.jar')
+    implementation files('libs/samsung-health-service-v1.4.0.jar')
+    implementation files('libs/sdk-v1.0.0.jar')
+
+}
