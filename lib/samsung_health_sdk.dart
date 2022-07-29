@@ -1,8 +1,18 @@
 
-import 'samsung_health_sdk_platform_interface.dart';
+import 'package:samsung_health_sdk/samsung_health_sdk_method_channel.dart';
+
 
 class SamsungHealthSdk {
-  Future<String?> getPlatformVersion() {
-    return SamsungHealthSdkPlatform.instance.getPlatformVersion();
+
+  final MethodChannelSamsungHealthSdk _method=MethodChannelSamsungHealthSdk();
+
+
+  Future<String?> initiate() {
+    return _method.initiate();
   }
+
+  void disconnect() {
+    return _method.disconnect();
+  }
+
 }

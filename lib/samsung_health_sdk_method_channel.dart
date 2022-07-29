@@ -14,4 +14,16 @@ class MethodChannelSamsungHealthSdk extends SamsungHealthSdkPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+
+  Future<String?> initiate() async {
+    final version = await methodChannel.invokeMethod<String>('initiate');
+    return version;
+  }
+
+
+  void disconnect() async {
+    await methodChannel.invokeMethod<String>('disconnect');
+  }
+
 }
